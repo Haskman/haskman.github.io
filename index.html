@@ -1,8 +1,125 @@
 <!DOCTYPE html>
+<html>
 <head>
-	
+    <title>Front-End Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-	<p>Hellow world!</p>
+    <div class="container">
+        <header class="row">
+            <div class="col-md-6">
+                <img src="images/img-logo.jpg" alt="Udacity logo"
+                     class="title-img img-responsive">
+            </div>
+            <div class="col-md-6 text-uppercase text-right">
+                <h1 class="text-muted title-super">Utku Sahin</h1>
+                <h3>Front-end Apprentice</h3>
+            </div>
+        </header>
+        <article>
+            <section class="row">
+                <div class="col-md-12">
+                    <hr>
+                    <img src="images/img-main-small.jpg" srcset="images/img-main-small.jpg 500w, images/img-main-medium.jpg 900w,
+                         images/img_main.jpg 1200w" sizes="(max-width: 600px) 500px, (max-width:1000px) 900px, 1400px"
+                         alt="Web themed main image" class="img-responsive">
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-md-12">
+                    <h2>Featured Work</h2>
+                </div>
+            </section>
+            <section class="row text-center">
+                <div class="col-md-4">
+                    <img src="images/img-resume.svg" class="img-responsive center-block"
+                         alt="Online Resume Image" data-toggle="modal" data-target="#project1">
+
+                    <h3>Online Resume</h3>
+
+                    <p><a href="https://github.com/Haskman/InteractiveResume/">Link to project</a></p>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/img-frogger.svg" class="img-responsive center-block" alt="Frogger Image"
+                         data-toggle="modal" data-target="#project2">
+
+                    <h3>Frogger Clone</h3>
+
+                    <p><a href="https://github.com/Haskman/Frogger/">Link to project</a></p>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/img-map.jpg" class="img-responsive center-block"
+                         alt="Neighborhood Map Image"
+                        data-toggle="modal" data-target="#project3">
+
+                    <h3>Neighborhood Map Project</h3>
+
+                    <p><a href="https://github.com/Haskman/NeighborhoodMap/">Link to project</a></p>
+                </div>
+            </section>
+        </article>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="project1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Online Resume</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive" alt="Resume" src="images/img-resume.svg">
+
+                    <p class="modal-text">This is my interactive resume which shows my front-end development skills.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="project2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel2">Frogger Clone</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive" alt="Frogger" src="images/img-frogger.svg">
+
+                    <p class="modal-text">This is my implementation of the classic arcade game Frogger</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="project3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel3">Neighborhood Map</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive" alt="Neighborhood Map" src="images/img-map.jpg">
+
+                    <p class="modal-text">A map of my neighborhood including places of interest and other content I wanted
+                        to add
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+</html>
