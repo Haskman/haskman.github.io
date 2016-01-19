@@ -487,11 +487,18 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
     frame++;
     window.performance.mark("mark_start_frame");
+    var phase = [];
 
     var items = document.querySelectorAll('.mover');
+
+    //Generate an array of phases for the siding pizzas on the background
     for (var i = 0; i < items.length; i++) {
-        var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-        items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+        phase.push(Math.sin((document.body.scrollTop / 1250) + (i % 5)));
+    }
+
+    //Edit the background sliding pizzas using the values generated beforehand
+    for (var i = 0; i < items.length; i++) {
+        items[i].style.left = items[i].basicLeft + 100 * phase[i] + 'px';
     }
 
     // User Timing API to the rescue again. Seriously, it's worth learning.
