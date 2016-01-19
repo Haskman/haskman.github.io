@@ -5,7 +5,8 @@
   imageLoader.addEventListener('change', handleImage, false);
   var canvas = document.querySelector('#image');
   var ctx = canvas.getContext('2d');
-  var worker = new Worker("worker.js");
+
+  var worker = new Worker("scripts/worker.js");
 
   function handleImage(e){
     var reader = new FileReader();
@@ -44,13 +45,15 @@
     // Hint! This is where you should post messages to the web worker and
     // receive messages from the web worker.
 
-    worker.postMessage(imageData.data);
+    worker.postMessage({'imageData': imageData, 'type': type});
     console.log("Message posted to worker");
     worker.onmessage = function(e){
-      imageData.data = e.data;
+      toggleButtonsAbledness();
       console.log("Worker message received");
+      if (e.data) return ctx.putImageData(e.data, 0, 0);
+      console.log("No manipulated image returned.")
     }
-    toggleButtonsAbledness();
+
 
     return ctx.putImageData(imageData, 0, 0);
   };

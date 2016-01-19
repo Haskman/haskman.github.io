@@ -1,4 +1,5 @@
 importScripts('imageManips.js');
+console.log("Script imported to worker");
 
 this.onmessage = function(e) {
   console.log("Message received by worker");
