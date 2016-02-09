@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neighborhood Map</title>
+    <script src="js/knockout-3.4.0.js"></script>
+    <script src="js/jQuery.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="map"></div>
+<div id="view">
+    <div id="filterView">
+        <h4>Filter</h4>
+
+        <form data-bind="submit:filterByPhrase">
+            Filter by place name: <input type="text" data-bind='value:phraseToFilter, valueUpdate: "afterkeydown"'/>
+            <button type="submit" data-bind="enable: phraseToFilter().length > 0">filter</button>
+        </form>
+
+        <p>Filter by category:</p>
+        <select multiple="multiple" height="5"
+                data-bind="options:allCategories, selectedOptions:categoriesToFilter"> </select>
+
+        <div>
+            <button data-bind="click: filterByCategories, enable: categoriesToFilter().length > 0">filter</button>
+        </div>
+    </div>
+    <div id="listView">
+        <h4>List of Places</h4>
+        <ul data-bind="foreach: placeMarkers">
+            <li data-bind="visible: $data.visible">
+                <div data-bind="html: $data.titleContent, click: listContentReveal($data)"></div>
+                <div data-bind="html: $data.content, visible: $data.contentVisible"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="js/app.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+</html>

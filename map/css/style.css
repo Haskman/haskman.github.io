@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 100%;
+}
+
+#filterView {
+    background-color: rgba(240, 248, 255, 0.5);
+    width: 200px;
+    bottom: 25px;
+    position: absolute;
+}
+
+#listView {
+    height: 600px;
+    width: 300px;
+    background-color: rgba(240, 248, 255, 0.5);
+    right: 0px;
+    top: 0px;
+    position:absolute;
+    overflow:scroll;
+}
+
+.view-img,
+.view-text {
+    width: 100%;
+}
+
+.showItem {
+    display: list-item;
+}
+
+.hideItem {
+    display: none;
+}
