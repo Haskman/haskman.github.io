@@ -1,4 +1,5 @@
 //Place data
+
 var places = [{
         "title": "Cookout",
         "description": "Cheapest fast food place in the area. The best choice when the fact of being broke becomes more urgent than eating well",
@@ -38,6 +39,7 @@ var places = [{
 //Global variables
 map;
 placeMarkers = ko.observableArray([]);
+placeWikis = ko.observableArray([]);
 
 
 //Initialize the map
@@ -59,13 +61,42 @@ function initMap() {
             return "<h3 class = 'view-text'>" + this.title + "</h4>";
         }
 
+        function wikiInit(callback){
+            this.wikiMarkup = "";
+
+            var wikiTitle = places[i].title.replace(" ", "_");
+            var wikiURL = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles="+this.title;
+
+            $.ajax({
+                type:"GET",
+                dataType:"jsonp",
+                async: false,
+                url: wikiURL,
+
+                success: function(result){
+                    callback(result.query.pages[Object.keys(result.query.pages)[0]].extract);
+                },
+                error: function(){
+
+                }
+            });
+        };
+
+        wikiInit(function(wikiString){
+            var wikiMarkup = "<h4>Wikipedia:</h4>" + "<p>" + wikiString + "</p>";
+
+            marker.infoWindow.content += wikiMarkup;
+        });
+
         function infoWindowContent(place){
             var contentString = "<h4>"+this.type+"</h4>"+
                 "<p class = 'view-text'>"+this.desc+"</p>"+
                 "<img class = 'view-img' src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location="
-                +this.cords.lat+","+this.cords.lng+"'>";
+                +this.cords.lat+","+this.cords.lng+"'>"+
+                this.wikiContent;
             return contentString;
         }
+
         infoWindow = new google.maps.InfoWindow({
             content: infoWindowTitle(place) + infoWindowContent(place),
             maxWidth: 200
@@ -112,27 +143,6 @@ function initMap() {
         placeMarker().contentVisible = ko.observable(true);
         placeMarker().titleContent = placeMarker().mapMarker.titleContent;
         placeMarker().content = placeMarker().mapMarker.content;
-
-        var wikiInit = function(){
-            var wikiMarkup = "";
-
-            var wikiTitle = places[i].title.replace(" ", "_");
-            var wikiURL = "https://en.wikipedia.org/w/api.php?action=query&titles=" + wikiTitle + "&prop=revisions&rvprop=content&rvsection=0&format=json";
-
-            $.ajax({
-                type:"GET",
-                dataType:"json",
-                url: wikiURL,
-
-                success: function(result){
-
-                }
-            });
-
-            return wikiMarkup;
-        };
-
-        placeMarker.wikiContent = wikiInit();
 
         placeMarkers.push(placeMarker);
     };
