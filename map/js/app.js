@@ -4,14 +4,14 @@ placeMarkers = ko.observableArray([]);
 
 //Place data
 places = [{
-    "title": "Cookout",
+    "title": "Cook Out (restaurant)",
     "description": "Cheapest fast food place in the area. The best choice when the fact of being broke becomes more urgent than eating well",
     "coordinates": {lat: 34.034523, lng: -84.571618},
     "type": "Food"
 },
 
     {
-        "title": "Cobb Center Mall",
+        "title": "Town Center at Cobb",
         "description": "The nearest mall. Has standard mall stuff.",
         "coordinates": {lat: 34.018442, lng:  -84.564487},
         "type": "Shopping"
