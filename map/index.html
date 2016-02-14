@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neighborhood Map</title>
     <script src="js/knockout-3.4.0.js"></script>
     <script src="js/jQuery.js"></script>
@@ -12,35 +12,46 @@
 <div id="map"></div>
 <div id="view">
     <div id="filterView">
-        <h4>Filter</h4>
+        <h4 data-bind="click: searchReveal()">Filter</h4>
 
-        <form data-bind="submit:filterByPhrase">
-            Filter by place name: <input type="text" data-bind='value:phraseToFilter, valueUpdate: "afterkeydown"'/>
-            <button type="submit" data-bind="enable: phraseToFilter().length > 0">filter</button>
-        </form>
+        <div data-bind="visible: searchVisible">
 
-        <p>Filter by category:</p>
-        <select multiple="multiple" height="5"
-                data-bind="options:allCategories, selectedOptions:categoriesToFilter"> </select>
+            <!-- TODO: Implement live search -->
+            <button data-bind="click: unfilter">Unfilter</button>
+            <p></p>
 
-        <div>
-            <button data-bind="click: filterByCategories, enable: categoriesToFilter().length > 0">filter</button>
+            <p>Filter by place name: </p>
+            <form data-bind="submit:filterByPhrase">
+                <input type="text" data-bind='value:phraseToFilter, valueUpdate: "afterkeydown"'/>
+                <button type="submit" data-bind="enable: phraseToFilter().length > 0">filter</button>
+            </form>
+
+            <p>Filter by category:</p>
+            <select multiple="multiple"
+                    data-bind="options:allCategories, selectedOptions:categoriesToFilter"> </select>
+
+            <div>
+                <!-- TODO: Implement live search -->
+                <button data-bind="click: filterByCategories, enable: categoriesToFilter().length > 0">filter</button>
+            </div>
+
         </div>
+
     </div>
     <div id="listView">
-        <h4>List of Places</h4>
-        <ul data-bind="foreach: placeMarkers">
+        <h4 data-bind="click: listReveal()">List of Places</h4>
+        <ul data-bind="foreach: placeMarkers, visible: listVisible">
             <li data-bind="visible: $data.visible">
                 <div data-bind="html: $data.titleContent, click: listContentReveal($data)"></div>
                 <div data-bind="html: $data.content, visible: $data.contentVisible"></div>
-                <div data-bind="foreach: placeWikis, $data.contentVisible">
-                    <div data-bind="html: $data.wikiContent, visible: $data.contentVisible"></div>
+                <div data-bind="html: $data.wikiContent, visible: $data.contentVisible">
                 </div>
             </li>
         </ul>
     </div>
 </div>
-</body>
 <script src="js/app.js"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+<script async type="text/javascript" src="http://maps.googleapis.com/maps/api/js?callback=initMap"
+        onerror="errorMap()"></script>
+</body>
 </html>
