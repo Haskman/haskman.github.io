@@ -23,3 +23,9 @@ hr {
     font-family: "Roboto", sans-serif;
     color: #245269;
 }
+
+.img-responsive {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
