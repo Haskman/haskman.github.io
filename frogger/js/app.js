@@ -7,7 +7,7 @@ var Enemy = function(x,y) {
     // a helper we've provided to easily load images
     this.x = x;
     this.y = y;
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = 'images/enemy-car.png';
 };
 
 // Update the enemy's position, required method for game
@@ -16,7 +16,7 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.x += 50*dt;
+    this.x += 500*dt;
     if (this.x > 505){
         this.x = -101;
     }
@@ -38,14 +38,14 @@ var Player = function(x, y, lives, score){
     this.y = y;
     this.lives = lives;
     this.score = score;
-    this.sprite = 'images/char-boy.png'
+    this.sprite = 'images/char-frog.png'
     }
 
 Player.prototype.update = function() {
     //Collision detection for each enemy in allEnemies and the player
     for (i in allEnemies){
         enemy = allEnemies[i];
-        if (this.x < (enemy.x+60) && this.x > (enemy.x - 70) && this.y < (enemy.y+20) && this.y > (enemy.y - 20))
+        if (this.x < (enemy.x+140) && this.x > (enemy.x - 70) && this.y < (enemy.y+20) && this.y > (enemy.y - 20))
             {
                 //Reset player position and take off a life
                 this.x = 200;
@@ -99,7 +99,7 @@ var allEnemies;
 var player;
 
 var generateEnemies = function(){
-    allEnemies = [new Enemy(200*Math.random()*2, 50), new Enemy(100*Math.random()*2, 200), new Enemy(300*Math.random()*2, 50),
+    allEnemies = [/*new Enemy(200*Math.random()*2, 50)*/, new Enemy(100*Math.random()*2, 200), new Enemy(300*Math.random()*2, 50),
         new Enemy(400*Math.random()*2, 150)];
 }
 

@@ -3,6 +3,11 @@ body {
     background-color: #FFFFFF;
 }
 
+#score,
+#lives {
+    background-color: palegoldenrod;
+}
+
 #score {
     color: blue;
 }
