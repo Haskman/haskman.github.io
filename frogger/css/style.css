@@ -5,13 +5,17 @@ body {
 
 #score,
 #lives {
-    background-color: palegoldenrod;
 }
 
-#score {
-    color: blue;
+#score,
+#lives{
+    color: white;
 }
 
-#lives {
-    color: red;
+#scoreboard {
+    background-image: url("../images/scoreboard.PNG");
+    height: 100%;
+    width: 606px;
+    margin-left: calc(50% - 303px);
 }
+
