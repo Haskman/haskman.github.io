@@ -38,6 +38,9 @@ function initMap() {
         this.sub_desc = place.BIAS_MOTIVATION_GROUP;
         this.type = place.CRIME_TYPE;
         this.infoWindow = new google.maps.InfoWindow();
+        this.opacity = 1.1 - ((new Date() - new Date(place.DATE_OCCURED))/197879431658.0);
+
+
 
         function infoWindowTitle(place){
             return "<h3 class = 'view-text'>" + this.title + "</h4>";
@@ -67,8 +70,10 @@ function initMap() {
             type: this.type,
             map: map,
             content: infoWindowContent(place),
-            infoWindow: this.infoWindow
+            infoWindow: this.infoWindow,
+            opacity: this.opacity
         });
+
 
         switch (this.type){
             case "VANDALISM":

@@ -12,7 +12,7 @@ data_address = "data/LMPD_OP_BIAS.csv"
 data = pd.read_csv(data_address)
 
 
-output = data.to_json(orient = "records")
+output = "places = " + data.to_json(orient = "records")
 print output
 
 with open('data/Processed_Crime_Data.json', 'w') as outfile:
