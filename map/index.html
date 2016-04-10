@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Neighborhood Map</title>
+    <title>Louisville Hate Crime Map</title>
     <script src="js/knockout-3.4.0.js"></script>
     <script src="js/jQuery.js"></script>
     <link href="css/style.css" rel="stylesheet">
@@ -12,15 +12,13 @@
 <div id="map"></div>
 <div id="view">
     <div id="filterView">
-        <h4 data-bind="click: searchReveal()">Filter</h4>
-
         <div data-bind="visible: searchVisible">
 
             <!-- TODO: Implement live search -->
             <button data-bind="click: unfilter">Unfilter</button>
             <p></p>
 
-            <p>Filter by place name: </p>
+            <p>Filter by case number: </p>
             <form data-bind="submit:filterByPhrase">
                 <input type="text" data-bind='value:phraseToFilter, valueUpdate: "afterkeydown"'/>
                 <button type="submit" data-bind="enable: phraseToFilter().length > 0">filter</button>
@@ -37,9 +35,11 @@
 
         </div>
 
+        <h4 data-bind="click: searchReveal()">Filter</h4>
     </div>
+
     <div id="listView">
-        <h4 data-bind="click: listReveal()">List of Places</h4>
+        <h4 data-bind="click: listReveal()">List of Cases</h4>
         <ul data-bind="foreach: placeMarkers, visible: listVisible">
             <li data-bind="visible: $data.visible">
                 <div data-bind="html: $data.titleContent, click: listContentReveal($data)"></div>

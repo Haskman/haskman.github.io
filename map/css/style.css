@@ -22,6 +22,7 @@ html, body {
     overflow:auto;
     max-width: 25vw;
     max-height: 100vh;
+    align: right;
 }
 
 .view-img,
