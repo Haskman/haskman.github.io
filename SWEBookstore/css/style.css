@@ -1,0 +1,67 @@
+body {
+    background-color: #FFC425;
+}
+
+
+
+#header, #welcome-text, #login-text/*, #sidebar, #sidebar-text*/ {
+    background-color: #231F20;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/*#sidebar {
+    height: 10vh;
+    max-width: 18%;
+}
+
+#sidebar-box {
+    left: 5%;
+    top: 15%;
+    position: absolute;
+    color: white;
+    font-size: 15pt;
+}*/
+
+.img-responsive{
+    margin: 5%;
+    max-width: 60%;
+}
+
+.search-results{
+    align-items: center;
+}
+
+.book-cover {
+    margin-left: 7vw;
+}
+
+#search-box {
+    margin-top: 10vh;
+}
+
+#search-logo {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+#search {
+    width: 50vw;
+    height: 5vh;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 10vh;
+}
+
+#results-table {
+    margin-left: 40px;
+    visibility: visible;
+}
+
+#login-text/*, #sidebar-text*/ {
+    margin-left: 20%;
+    font-family: 'Arimo', sans-serif;
+    font-size: 15pt;
+}

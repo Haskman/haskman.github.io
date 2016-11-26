@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KSU Online Bookstore</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+
+    <script src="js/jQuery.js"></script>
+
+    <script src="js/app.js"></script>
+
+</head>
+<body>
+    <header class="row" id="header">
+        <div class="col-md-3">
+            <img src="data/img/ksulogo.png" class="img-responsive">
+        </div>
+        <div class="col-md-6 text-uppercase text-center">
+            <h1 class="text-muted title-super" id="welcome-text">Welcome to KSU Online Bookstore!</h1>
+        </div>
+        <div class="col-md-2 text-center">
+            <a href="#" class="modal-title" id="login-text">Login</a>
+        </div>
+        <div class="col-md-1">
+            <a href="cart.html"><img src="data/img/cartlogo.png"></a>
+        </div>
+    </header>
+    <article>
+        <!--TODO: Make sidebar great again-->
+        <!--<section class="row" id="sidebar">
+            <div id="sidebar-box" class="text-center">
+            <div class="text-center"><a href="#" class="sidebar-text modal-title">About</a></div>
+            <div><a href="#" class="sidebar-text modal-title">Contact us</a></div>
+            </div>
+        </section>-->
+
+        <section class="row" id="search-bar">
+            <div id="search-box" class = "center-block text-center">
+                <div class="col-md-2">
+                </div>
+                <div class = col-md-1 id="search-logo">
+                    <img src="data/img/searchicon.png" alt="Search Icon" style="height:5vh;width:5vh;">
+                </div>
+                <form class = col-md-6>
+                    <input type="text" id="search" name="search" placeholder="Search">
+                </form>
+                <div class="col-md-2">
+                    <select id="search-dropdown">
+                        <option value="title">By Title</option>
+                        <option value="author">By Author</option>
+                        <option value="ISBN">By ISBN</option>
+                    </select>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </section>
+
+        <section class="row" id="results-table">
+            <div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                    <h4 class="text-center" id="col-cover">Cover</h4>
+                </div>
+                <div class="col-md-2">
+                    <h4 class="text-center" id="col-title">Title</h4>
+                </div>
+                <div class="col-md-2">
+                    <h4 class="text-center" id="col-author">Author</h4>
+                </div>
+                <div class="col-md-2">
+                    <h4 class="text-center" id="col-desc">Description</h4>
+                </div>
+                <div class="col-md-2">
+                    <h4 class="text-center" id="col-ISBN">ISBN</h4>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </section>
+    </article>
+</body>
+</html>
