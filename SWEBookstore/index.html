@@ -25,7 +25,7 @@
             <a href="#" class="modal-title" id="login-text">Login</a>
         </div>
         <div class="col-md-1">
-            <a href="cart.html"><img src="data/img/cartlogo.png"></a>
+            <a href="cart.html"><img id="cartlogo" src="data/img/cartlogo.png"></a>
         </div>
     </header>
     <article>
@@ -45,13 +45,17 @@
                     <img src="data/img/searchicon.png" alt="Search Icon" style="height:5vh;width:5vh;">
                 </div>
                 <form class = col-md-6>
-                    <input type="text" id="search" name="search" placeholder="Search">
+                    <input type="text" id="search" placeholder="Search">
                 </form>
                 <div class="col-md-2">
+                    <label for="search-dropdown">Search by:</label>
                     <select id="search-dropdown">
-                        <option value="title">By Title</option>
-                        <option value="author">By Author</option>
-                        <option value="ISBN">By ISBN</option>
+                        <option value="title">Title</option>
+                        <option value="author">Author</option>
+                        <option value="ISBN">ISBN</option>
+                        <option value="professor">Professor</option>
+                        <option value="class">Class</option>
+                        <option value="CRN">CRN</option>
                     </select>
                 </div>
                 <div class="col-md-1"></div>
@@ -79,6 +83,7 @@
                 <div class="col-md-1"></div>
             </div>
         </section>
+
     </article>
 </body>
 </html>

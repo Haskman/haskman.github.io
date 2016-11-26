@@ -30,12 +30,31 @@ body {
     max-width: 60%;
 }
 
-.search-results{
+.search-results, .book-profile{
     align-items: center;
+    /*visibility: hidden;*/
+}
+
+.book-profile{
+    margin-top: 5vh;
 }
 
 .book-cover {
     margin-left: 7vw;
+}
+
+.quantity-box {
+    margin-left: 0;
+}
+
+.add-item {
+    margin: 1vh;
+    height: 5.5vh;
+    width: 5vw;
+}
+
+.closeicon {
+    margin-bottom: 5vh;
 }
 
 #search-box {
@@ -57,7 +76,7 @@ body {
 
 #results-table {
     margin-left: 40px;
-    visibility: visible;
+    visibility: hidden;
 }
 
 #login-text/*, #sidebar-text*/ {
