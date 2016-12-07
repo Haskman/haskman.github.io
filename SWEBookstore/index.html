@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<!--TODO: Solve the wasted space problem-->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +14,9 @@
     <script src="js/jQuery.js"></script>
 
     <script src="js/app.js"></script>
+    <script src="js/cookieManager.js"></script>
+    <script src="js/checkCC.js"></script>
+    <script src="js/sendLink.js"></script>
 
 </head>
 <body>
@@ -25,7 +31,7 @@
             <a href="#" class="modal-title" id="login-text">Login</a>
         </div>
         <div class="col-md-1">
-            <a href="cart.html"><img id="cartlogo" src="data/img/cartlogo.png"></a>
+            <a href="javascript:checkout();"><img id="cartlogo" src="data/img/cartlogo.png"></a>
         </div>
     </header>
     <article>
@@ -37,7 +43,10 @@
             </div>
         </section>-->
 
+        <!--TODO: Hide search bar when not needed-->
         <section class="row" id="search-bar">
+            <div id="search-hanger">
+            </div>
             <div id="search-box" class = "center-block text-center">
                 <div class="col-md-2">
                 </div>
@@ -62,16 +71,16 @@
             </div>
         </section>
 
+        <!--TODO: Display price info etc., also make sure titles have hyperlinks-->
         <section class="row" id="results-table">
-            <div>
-                <div class="col-md-1"></div>
-                <div class="col-md-2">
+            <!--<div>
+                <div class="col-md-1">
                     <h4 class="text-center" id="col-cover">Cover</h4>
                 </div>
                 <div class="col-md-2">
                     <h4 class="text-center" id="col-title">Title</h4>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <h4 class="text-center" id="col-author">Author</h4>
                 </div>
                 <div class="col-md-2">
@@ -80,8 +89,19 @@
                 <div class="col-md-2">
                     <h4 class="text-center" id="col-ISBN">ISBN</h4>
                 </div>
-                <div class="col-md-1"></div>
-            </div>
+                <div class="col-md-1">
+                    <h4 class="text-center" id="col-New">New Price</h4>
+                </div>
+                <div class="col-md-1">
+                    <h4 class="text-center" id="col-Used">Used Price</h4>
+                </div>
+                <div class="col-md-1">
+                    <h4 class="text-center" id="col-Rental">Rental Price</h4>
+                </div>
+                <div class="col-md-1">
+                    <h4 class="text-center" id="col-Ebook">Ebook Price</h4>
+                </div>
+            </div>-->
         </section>
 
     </article>
