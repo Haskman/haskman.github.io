@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-color: #FFC425;
 }
 
 
@@ -30,10 +30,6 @@ body {
     max-width: 60%;
 }
 
-.input-container {
-    margin: 3vh;
-}
-
 .search-results, .book-profile{
     align-items: center;
     /*visibility: hidden;*/
@@ -44,8 +40,7 @@ body {
 }
 
 .book-cover {
-    display: flex;
-    vertical-align: middle;
+    margin-left: 7vw;
 }
 
 .quantity-box {
@@ -54,8 +49,8 @@ body {
 
 .add-item {
     margin: 1vh;
-    /*height: 5.5vh;
-    width: 5vw;*/
+    height: 5.5vh;
+    width: 5vw;
 }
 
 .closeicon {
@@ -88,5 +83,4 @@ body {
     margin-left: 20%;
     font-family: 'Arimo', sans-serif;
     font-size: 15pt;
-    visibility: hidden;
 }
